@@ -1,0 +1,11 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: example-peer-policy
+spec:
+  selector:
+    matchLabels:
+      app: reviews
+  portLevelMtls:
+    80:
+      mode: DISABLE
