@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: helloworld-v1
+        image: docker.io/istio/examples-helloworld-v1
         resources:
           requests:
             cpu: "100m"
@@ -62,22 +62,10 @@ spec:
     spec:
       containers:
       - name: helloworld
-        image: helloworld-v2
+        image: docker.io/istio/examples-helloworld-v2
         resources:
           requests:
             cpu: "100m"
         imagePullPolicy: IfNotPresent #Always
         ports:
         - containerPort: 5000
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: httpbin
-  labels:
-    app: httpbin
-spec:
-  containers:
-  - image: docker.io/honester/httpbin:latest
-    imagePullPolicy: IfNotPresent
-    name: httpbin
